@@ -1,0 +1,584 @@
+﻿<!DOCTYPE >
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<!--头尾部start-->
+		<!--导入核心文件-->
+		<script src="../header_footer/bootstrap3/js/holder.js"></script>
+		<script src="../header_footer/bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../header_footer/js/bootstrap.js"></script>
+		<link href="../header_footer/bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<!-- 字体图标 -->
+		< <link rel="stylesheet" type="text/css" href="../header_footer/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../header_footer/css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../header_footer/css/footer.css" />
+		<!--头尾部end-->
+		<link rel="stylesheet" type="text/css" href="../css/page.css" >
+		<link rel="stylesheet" type="text/css" href="../css/scroll_box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"   media="all" />
+	
+		<!-- banner-slider -->
+		<link rel="stylesheet" href="../css/jquery.slidey.min.css" >
+		<!-- //banner-slider -->
+		<link rel="stylesheet"href="../font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  media="all" />
+		
+		<style type="text/css">
+		/*放button的地方*/
+			#div01 {
+				min-width: 1000px;
+				width: 100%;
+				height: 60px;
+				/*边框solid实线*/
+				background: url(data:image/webp;base64,UklGRsQIAABXRUJQVlA4WAoAAAAQAAAAPwYARwAAQUxQSDMAAAABFyAQSDSi2m/ziIgGBW0bOTwO4uH6GbY/E9H/LCxGTBYj8X//93//93///z5OFiMLixEAVlA4IGoIAAAwPQCdASpABkgAPiEQhkMhoSCQEBgCBLS3fj49pPBsOOEPMneUWw0XreXOUf8V+p/U7evM/PsJyEhf/t63P7aAP//6tvgH//7e3fcAn1VBgubZK9XJ9TyhNeavQYSAlBvDJiir9mW7Mt2bOVr0yWRqFsvdjdVkXJ0ns/L34ECSUE3GQ84CrudcTPYT8vKDpaU+fWUH9q0jwik11bK0b1r2oM96ZL+kAMlBncKifn1zMlGtWjXTmS1Z0tPMvyMrrKSORrWlPlnXGCuba1ZMWuwMuNonv1/78F6ZLGtd613V0z8VZIlT6CMaK/D4xQGjDKIiLi+0C/BJDH+LfELG3xt4O27E03AFgLQs7991P/kIvJT5tUXrWa7Lp+Mrhf6QMeHaJfysDsrHlVMYYCkCbKfneOB7l1JdEKaH/NEhiEwwPOsEF0nohYBERERnERn4na90SNaRm5CIi4rxXipYH8kPSHxhuhosxn7910XfvxR3KcoWMy1mmJrl8eYCIiERERFImWJYCcCzbRERERETFYSIikFXZy2I+zSN9X6rBHl6vAiQXYFiWGV9tD9U7sG1bQWMWkTkWbOlG53hcYiseUt1o1VNdB84PG8BiCKl4qWggIiIz5310lyzphEYwJ6Ffzfqsci8m4JQJvFHAZkxCmiiSAAA/p2iUY31V196Wmt/F329fGHShyb6rPubMo+Zx7ZkqEhnTeN+/rwwUljBzYI8s+7cgOi6xV91tYiavY4l3y9MIsIiLrKYgLomDGSl/yi1QrONlXJe/kEs1exgScBRAA2knNFDkXGhvEjNk0ooQCk0fC96LM56cydRKDh3W4M6w0O/Lxihv7yT9C2rWDYr0rziXuuWkBInLKhnPVuVxUoKMnyP33VcLTWMZ8VliPPv2xIJUBXNkyCZAsbJ3tcYf/2QyrRqNLNPALk3JRHLg+QBYyJKWBL1/jaFo9z7husvzlYCmG+Cbl8u8N753oLHKKuc4eV+Xu0m/z3u/I/3MVfykBO4GaTL2bnQDmII2BE7ym9UDn8arJdP78mh9R4SbzPwmsuIddS3t8zoFAK/+xKnds3WT/XNdtN6q2b3TDvgtlVuHDWqacnhbWEhtAcduC2qsodf9eovyElgIe0rnyBW8pzsXbQxtjdrsQ+ACUnpmJqfjpIrXJGyQb3tvWzzaDbFESZO5/EVb+T71FY1IaRntj270U77lgIXJ1zaRFIVPsv+FoDp1Y6w5W98jizWrNTK8Snpn1lhizk7cuYuKMgXlEO+HxMyEA9yeX+tSbsBiVcJPsGW+VccBZxP4LpxV3jfAlp2iVl+h/XIqGejgLd9IU+IZkSk+GrlSLK7Gxp5WH1iwUW/bVab5pQdfMKvqR6F60X99CCcqY8s+DPXBj/80PB3D39/d9kjMGnXSzU10pmdxm23LITkp+g7Ehill4PK87UDVASO9QLIljrWc1xxFZYxocLZ5N4BGSdF7131+ezpSYS+ReI8V/bibq8qYXJYXxbWbsLg4ffnENwxIgFjgvj23jkCyvynHsnaXBOEfP6TeEKVI7SeqsjLSLKx8QkXov/Ze6xarn7Hz+inePLVJhxtT0gMvw8p9wT2N4/rmbXEENwCOkafa7k2OpKVwGXWAOgNuW6bkH6nPRAx0CsTmW9A0+9mfVom82VYP/yc4uhKk8hjlf0+gcrLn0fhmdmgdK7GnucwMPdGDf0/C5X7YvQ9IzPnU8HpcYgFbsO7wvL5egL2lXweZH8a6J8mYkP2qvAovPmX3FA2WepGp7wZMF0c16EuNIKgOUwXRjyBv6R9r9L+gfy/0f+W0/EXM8JUVTgjrIHq8SmPNBQg4+YkfoCA9kG7DS4IcH2kBu582Txo3I3y6FhExW/ACAvLuPvREBOMKTQG23MxSC4ecHvQtzCZj5NfftazjGTljz1rNTX2Ao2OKkyWAXDn12mFcg6drywLGk0oOFi4NhG3PuQ1rDPuIxF4C4Dg1KNrx49TaUkLnARDyFcncFkTwqF1tWpJT+1tOFVYROkyjfTNfqa4kF50kyqLJXLs85PmK4IrSOwcMl3aAdUqSo00IqmtaTqKOhX2+cqPRbz/nkebS0r1ATZY71GJcTdlS+FVH1VIPQKSblYsIcY5b9PPRvZm0/v4kQ4xYH2tnDRkunkdCL7wLchQVBgpz61kg30NkoF5i8+KAeiD2AA5qddTOqbUHvtkIONHnNowyIseGZdyg7/3UwKZXIBCVqk4M5VH384mMWkcRWyBolkYMLHqj1QcHgoKO40salIeUFye3vVT1NprBbotYmtxsDzmR9IXzVISoduezS79gKLji0/GoC3SbGVTGXscORJ6ZcEbpMZGaz+FfNvDTQcqO0AJ5EHkJrkqgl9yoFU/GpDTfVIJ0qQxzPanlE9TtsS/sSOrSa+1G3zN+oJis2PvuGZH1fqqaEkUq/lp0ocmGw7ZyF2zvoKcb9PZSQwl1v8D8nijqnUWQZXXdhbDWHHhQxJ7qg6YSLe4xREiozt4FAGDmcrdpzuYfA16JAAFpt590s0kqTGFi1FjcYMCYbSF6+henGFDfONyr4j4f45TUSh9rWABU4q5mBsUtbkJQ8AX6nYLZ9ZUj1tzoqdt97e9ZRkUO47pAksB/IQgO8iP3qvZclhWRR1xSagw8OU6yH6DS+0LYQkAYrzImaEPS4a5rwyHZtn2AYzKee5ATZAysPH+PBxVgGLACfDYChhqNc0JFSif56cI/nEwAdy829jnJ8jhJr6XUdBoblNijlrKxXUhr8VVKFO5Ys5VdFL6cbcdi8YGAArFAD2BKN7e6BA1lXhDQVGm7oXhMJO571iyLcuLrLXFlyROFYyr1vHn6WJx3IXv3jL9+/IWj2Sn/dzAAAA=);
+				align-content: center;
+				margin-top: 0px;
+				/*margin-top:90px;*/
+			}
+			/*3个radio*/
+			
+			#div02 {
+				min-width: 1000px;
+				width: 80%;
+				height: 4%;
+				/*边框solid实线*/
+				margin: auto;
+				margin-top: 1.4%;
+			}
+			/*正在上映与即将上映按钮*/
+			
+			.button {
+				border: none;
+				background-color: Transparent;
+				background-repeat: no-repeat;
+				margin-top: 10px;
+				cursor: pointer;
+				overflow: hidden;
+				font: "微软雅黑";
+				font-size: 20px;
+				outline: none;
+				margin-left: 100px;
+				margin-right: 100px;
+				color: #ACACAC;
+				font-weight: 700;
+			}
+			/*所有商品组合大框*/
+			
+			#div03 {
+				min-width: 1000px;
+				width: 80%;
+				min-height: 200px;
+				/*当div内容不超过200px高度时，div高度为200px*/
+				height: auto;
+				/*当div内容超过200px高度时，div自动增高*/
+				overflow: hidden;
+				/*超出最大范围会自动隐藏*/
+				/*边框solid实线*/
+				border: none;
+				margin: auto;
+				align-content: center;
+				margin-top: 0.09%;
+			}
+			/*分页框*/
+			
+			#div04 {
+				min-width: 1000px;
+				width: 100%;
+				margin-top: 50px;
+				height: 30px;
+				float: left;
+			}
+			/*商品列表图片的样式*/
+			
+			.img-search {}
+			/*商品框的样式*/
+			
+			.goods-panel {
+				width: 90%;
+				height:36%;
+				box-shadow: 0px 0px 0px #888888;
+				border:none;
+				padding: 3px;
+				padding-bottom: 10px;
+				margin-bottom: 30px;
+				float: left;
+			}
+			/*商品名称的样式*/
+			
+			.name-price h4 {
+				font-size: 20px;
+				align-content: center;
+			}
+			/*商品价格的样式*/
+			
+			.name-price h5 {
+				color: red;
+				font-size: 17px;
+			}
+			.name-price{
+				margin-top: 0px;
+			}
+			
+			
+			/*会变大的图片的默认样式*/
+			
+			.move-img {
+				background-size: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				height:85%;
+				
+			}
+			/*商品列表图片的样式*/
+			
+			.col-md-offset-1 {
+				margin-left: 8.5%;
+			}
+			
+			.col-md-10 {
+				position: relative;
+				min-height: 1px;
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+			
+			@media (min-width: 30px) {
+				.col-md-3 {
+					float: left;
+				}
+				.my_header {
+					text-align: center;
+					align-items: center;
+				}
+				.my_div1 div {
+					border-bottom: 0.5px solid #000;
+				}
+				.my_div2 div {
+					border-bottom: none;
+				}
+				.my_images {
+					position: absolute;
+					left: 6.25rem;
+					top: 0.5rem;
+				}
+				.my_images0 img {
+					size: 50%;
+					margin-top: 1.25rem;
+				}
+				.myfont {
+					font-size: 30%;
+				}
+				.my_font {
+					font-size: 100%;
+					text-align: center;
+				}
+				.normal_font {
+					font-size: 5%;
+				}
+				h1 {
+					font-size: 150%;
+				}
+				#multi_images li {
+					float: left;
+					display: inline;
+					width: 12.5rem;
+				}
+				#divcss div {
+					align-items: center;
+					align-content: center;
+					width: 15.625rem;
+					vertical-align: auto;
+				}
+		</style>
+
+	</head>
+
+	<body>
+
+		<!--头部-->
+		<header class="my_header head" style="height: 6.25rem;">
+			<!--学子商城logo-->
+			<div class="col-md-3 my_images">
+				<a href="index.html?page=1">
+					<img src="../header_footer/images/index/logo.png" height="80" width="160" class="my_images" />
+				</a>
+			</div>
+			<!--快捷选项-->
+
+			<div class="col-md-9 top-item" style="left: 20%;top: 10%;">
+
+				<ul class="list-inline" style="float: right; font-size:150%;">
+
+					<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;收藏</a></li>
+					<li class="li-split">|</li>
+					<li><a href="../../login,adm/web/user_order.html"><span class="fa fa-file-text"></span>&nbsp;订单</a></li>
+					<li class="li-split">|</li>
+					<li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;想看</a></li>
+					<li class="li-split">|</li>
+					<li>
+						<!--下列列表按钮 ：管理-->
+						<div class="btn-group my_div2">
+							<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="font-size: 110%;">
+								<a href="../../login,adm/web/adm_film.html"><span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;管理 <span class="caret"></span></span></a> 
+							</button>
+							<ul class="dropdown-menu top-dropdown-ul" role="menu">
+								<li><a href="../../login,adm/web/user_password.html">修改密码</a></li>
+								<li><a href="../../login,adm/web/user_data.html">个人资料</a></li>
+								<li><a href="upload.html">上传头像</a></li>
+								<li><a href="address.html">收货管理	</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li-split">|</li>
+					<li><a href="../../login,adm/web/login.html"><span class="fa fa-user"></span>&nbsp;登录</a></li>
+
+				</ul>
+			</div>
+		</header>
+		<!--头部结束-->
+
+		<!-- banner 滚动大屏幕引用文件-->
+		<div id="slidey" style="display:none; margin-top: 0%;background-color: #0a0910;">
+			<ul>
+				<li><img src="../img/塞尔达传说.jpg" alt=" ">
+					<p class='title'>塞尔达传说</p>
+					<p class='description'> 故事发生在海拉鲁王国灭亡的100年后，曾经一场大灾难袭击了海拉鲁王国使之灭亡，主角林克在地下遗迹苏醒，追寻着不可思议的声音，开始了新的冒险之旅</p>
+				</li>
+				<li><img src="../img/The_Lord_of_the_Rings.jpg" alt=" ">
+					<p class='title'>魔戒</p>
+					<p class='description'>电影讲述了黑暗魔君索伦在数千年前铸造了一枚具有无上权力的至尊魔戒，后来这枚魔戒辗转落到了天真无邪的男孩弗罗多的手里，弗罗多抵御住了魔戒的诱惑，在朋友们的帮助下最终前往末日山脉销毁了魔戒的故事。</p>
+				</li>
+				<li><img src="../img/哪吒之魔童降世.jpg" alt=" ">
+					<p class='title'>哪吒</p>
+					<p class='description'>天地灵气孕育出一颗能量巨大的混元珠，元始天尊将混元珠提炼成灵珠和魔丸，灵珠投胎为人，助周伐纣时可堪大用；而魔丸则会诞出魔王，为祸人间...</p>
+				</li>
+				<li><img src="../img/绿皮书.jpg" alt=" ">
+					<p class='title'>绿皮书</p>
+					<p class='description'>该片改编自真人真事，讲述了意裔美国人保镖托尼，他被聘用为世界上优秀的爵士钢琴家唐开车。钢琴家将从纽约开始举办巡回演奏，俩人之间一段跨越种族、阶级的友谊的故事</p>
+				</li>
+				<li><img src="../img/Parasite.jpg" alt=" ">
+					<p class='title'>寄生虫</p>
+					<p class='description'>《寄生虫》讲述了发生在身份地位悬殊的两个家庭身上的故事：宋康昊饰演的无业游民父亲基泽，让寄托了家人生计希望的大儿子（崔宇植 饰）前往IT公司老总朴社长（李善均 饰）家应聘课外教师，随之发生了一连串意外事件。</p>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/jquery.slidey.js"></script>
+		<script src="../js/jquery.dotdotdot.min.js"></script>
+		<script type="text/javascript">
+			$("#slidey").slidey({
+				interval: 8000,
+				listCount: 5,
+				autoplay: false,
+				showList: true
+			});
+			$(".slidey-list-description").dotdotdot();
+		</script>
+		<!-- banner 滚动大屏幕-->
+
+		<!--正在上映和即将上映两个按钮start-->
+		<div id="div01">
+			<center>
+				<button type="button" id="b01" class="button" style="color: #FFFFFF;" onclick="showNowFilm(this.id,'b02')">
+				<span id="left-dropdown-btn"><span class="fa fa-film"></span>&nbsp;正在上映</span>
+				</button>
+				<button type="button" id="b02" class="button" onclick="showFutureFilm(this.id,'b01')">
+				<span id="right-dropdown-btn"><span class="fa fa-clock-o"></span>&nbsp;即将上映</span>
+				</button>
+			</center>
+		</div>
+
+		<div id="div02">
+
+			<label style="font-size: 12px; line-height: 4%;"><input type="radio" 
+						name="kind"
+						id="r01"
+						checked="checked" value="" style="width: 12px;height: 12px;margin-left: 157px;background-color: red;border-color: ;"/>热门推荐</label>
+			<td>&nbsp;&nbsp;</td>
+			<label style="font-size: 12px;"><input type="radio" 
+						name="kind"
+						id="r02"value="" style="width: 12px;height: 12px;"/>按时间排序</label>
+			<td>&nbsp;&nbsp;</td>
+			<label style="font-size: 12px;"><input type="radio" 
+						name="kind"
+						id="r02"value="" style="width: 12px;height: 12px;"/>按评分排序</label>
+
+		</div>
+		<!--排序按钮end-->
+		<!--影片start-->
+		<div id="div03">
+			<div class="col-md-offset-1 col-md-10" id="film">
+
+			
+
+		</div>
+		</div>
+		<!--影片end-->
+		<!--page分页start-->
+		<div id="div04">
+			<center>
+				<div id="page-normal" align="center" style="margin: auto;">
+
+					<span id="page-prev"><i></i>上一页</span>
+					<a href="index.html?page=1" id="page-current">1</a>
+					<a href="index.html?page=2">2</a>
+					<a href="index.html?page=3">3</a>
+					<span id="page-ellipsis">...</span>
+					<a href="index.html?page=10">10</a>
+					<a  href="index.html?page=11">下一页<i></i></a>
+
+				</div>
+			</center>
+		</div>
+		<!--page分页end-->
+
+		<!--页脚开始-->
+		<div class="clearfix"></div>
+		<footer class="footer" style="background:lightgray">
+			<!--联系我们、下载客户端等-->
+			<div class="container beforeBottom">
+				<div class="col-md-offset-1 col-md-3">
+					<div><img src="../header_footer/images/index/logo.png" height="50" width="140" alt="" class="footLogo" /></div>
+					<div><img src="../header_footer/images/index/footerFont.png" alt="" /></div>
+
+				</div>
+				<div class="col-md-4 callus text-center">
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#客服帮助"><h5>客服帮助</h5></a></li>
+							<li><a href="#新手指南">新手指南</a></li>
+							<li><a href="#服务保障">服务保障</a></li>
+							<li><a href="#常见问题">常见问题</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#前台帮助"><h5>前台帮助</h5></a></li>
+							<li><a href="#合伙投资">合伙投资</a></li>
+							<li><a href="#后台管理">后台管理</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#关于我们"><h5>关于我们</h5></a></li>
+							<li><a href="#关于WeTube">关于WeTube</a></li>
+							<li><a href="#联系我们">联系我们</a></li>
+							<li>
+								<span class="fa fa-wechat"></span>
+								<span class="fa fa-weibo"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-md-5">
+						<p>WeTube客户端</p>
+						<img src="../header_footer/images/index/ios.png" class="lf">
+						<img src="../header_footer/images/index/android.png" alt="" class="lf" />
+					</div>
+					<div class="col-md-6">
+						<img src="../header_footer/images/index/erweima.png">
+					</div>
+				</div>
+			</div>
+			<!-- 页面底部-备案号 #footer -->
+			<div class="col-md-12 text-center bottom">
+				Copyright © 2018 WeTube.com All Rights Reserved 京ICP备xxxxxxxx号-xx <a target="_blank" style="font-size: 12px" href="http://www.WeTube.com/">WeTube集团有限公司</a> 版权所有
+			</div>
+
+		</footer>
+		<!--页脚结束-->
+	</body>
+
+</html>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		showFilmList();
+		showPage();
+	});
+	
+	var page1;
+	var pagefuture;
+	var pagenow;
+	<!--正在上映的电影-->
+	function showFilmList(isRefresh){
+		isFuture = 0;
+		if(isRefresh==1)
+		{
+			page1=1;
+  		}
+		else
+			{
+			var url = window.location.href;
+  			if(url.indexOf("?")!=-1){  
+  				var index = url.indexOf("=");
+  				page1 = parseInt(url.substring(index+1,url.length));
+			}	
+			else
+				page1=1;
+  			}
+  		pagenow=page1;
+		$.ajax({
+			"url":"/films/Now/" + page1+"/",
+			"type":"GET",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					var list = json.data;
+					$("#film").empty();
+					for (var i = 0; i < list.length; i++) {
+//						console.log(list[i].title);
+						var html='<div class="col-md-3">'
+							+ '<div class="goods-panel">'
+							+'<div class="move-img img-search" >'
+							+ '<a href="../../static1/film.html" ">'
+							+ '<img src="../img/#{film_images}" width="100%" height="100%" onclick="turn_to_film(#{fid})" /></a>'
+							+ '</div>'
+							+ '<div class="name-price">'
+							+ '<h4 align="center">#{film_name}</h4>'
+							+ '<h5 align="center">19元起</h5>'
+							+ '</div>'
+							+ '</div>'
+							+ '</div>';
+						html = html.replace(/#{fid}/g, list[i].fid);
+						html = html.replace(/#{film_name}/g, list[i].filmName);
+					 	html = html.replace(/#{film_images}/g, list[i].filmImages);
+								
+						$("#film").append(html);
+					}
+				} else {
+					alert(json.message);
+				}
+			}
+		});
+	}
+	
+	
+				var isFuture;
+				function showPage(){
+					$.ajax({
+						"url":"/films/"+isFuture+"/",
+						"type":"GET",
+						"dataType":"json",
+						"success":function(json) {
+							if (json.state == 200) {
+								var list = json.data;
+								$("#page-normal").empty();
+								var counts = list.length; //总条数
+								var yecount = 12;
+								var page_num = counts/yecount;
+								if(counts % yecount != 0)
+								{
+									page_num +=1;	
+								}
+								for (var i = 1; i < page_num; i++) {
+									if(i==pagenow)
+									{
+										var html = 
+											'<a href="index.html?page='+ i +'"id="page-current">' + i + '</a>';		
+											$("#page-normal").append(html);
+									}
+									else{
+										var html = 
+										'<a href="index.html?page='+ i +'">' + i + '</a>';		
+										$("#page-normal").append(html);}
+								}
+							} else {
+								alert(json.message);
+							}
+						}
+					});
+				}
+	
+	
+	function showNowFilm(id01,id02){
+					change01(id01,id02);
+					showFilmList(1);
+					showPage();
+				}
+				
+	function showFutureFilm(id01,id02){
+					change01(id01,id02);
+					showFutureFilmList(1);
+					showPage();
+				}
+				
+	function showFutureFilmList(isRefresh){
+		isFuture = 1;
+		if(isRefresh==1)
+		{
+			pagefuture=1;
+  		}
+		else{
+			var url = window.location.href;
+  			if(url.indexOf("?")!=-1){  
+  			var index = url.indexOf("=");
+  			pagefuture = parseInt(url.substring(index+1,url.length));
+			}	
+			else
+			pagefuture=1;
+		}
+  		pagenow=pagefuture;
+		$.ajax({
+			"url":"/films/Future/" + pagefuture+"/",
+			"type":"GET",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					var list = json.data;
+					$("#film").empty();
+					for (var i = 0; i < list.length; i++) {
+//						console.log(list[i].title);
+						var html='<div class="col-md-3">'
+							+ '<div class="goods-panel">'
+							+'<div class="move-img img-search" >'
+							+ '<a href="../../static1/film.html" ">'
+							+ '<img src="../img/#{film_images}" width="100%" height="100%" onclick="turn_to_film()" /></a>'
+							+ '</div>'
+							+ '<div class="name-price">'
+							+ '<h4 align="center">#{film_name}</h4>'
+							+ '<h5 align="center">19元起</h5>'
+							+ '</div>'
+							+ '</div>'
+							+ '</div>';
+						html = html.replace(/#{fid}/g, list[i].id);
+						html = html.replace(/#{film_name}/g, list[i].filmName);
+					 	html = html.replace(/#{film_images}/g, list[i].filmImages);
+								
+						$("#film").append(html);
+					}
+				} else {
+					alert(json.message);
+				}
+			}
+		});
+	}
+	
+	function change01(id01, id02) {
+		var ser1 = document.getElementById(id01)
+		ser1.style.color = "#FFFFFF";
+		var ser2 = document.getElementById(id02)
+		ser2.style.color = "#ACACAC";
+	}
+
+	function turn_to_film(fid) {
+		$.ajax({
+			"url":"/films/savesession",
+			"data":"fid="+fid,
+			"type":"GET",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					
+				}else {
+					alert(json.message);
+				}
+			}
+		});
+		window.location.href = '../../static1/film.html'
+	}
+</script>

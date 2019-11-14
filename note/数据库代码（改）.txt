@@ -1,0 +1,88 @@
+create database WeTube_cinema;
+
+use wetube_cinema;
+
+create table w_user(
+	uid int auto_increment comment'用户id',
+	username nvarchar(50) unique not null comment'用户名',
+	password nvarchar(50) not null comment'密码',
+	gender int default 0 comment'性别 0-男 1-女',
+	phone nvarchar(50) comment'电话',
+	user_avatar nvarchar(50) comment'用户头像',
+	is_deleted int default 0 comment'是否删除 0不删除 1删除',
+	created_user nvarchar(50)  comment'创建人名称',
+	created_time datetime  comment'创建时间',
+	modified_user nvarchar(50) comment'修改人',
+	modified_time datetime comment'修改时间',
+	primary key(uid)
+)default charset=utf8;
+
+create table w_films(
+	fid int auto_increment comment'电影id',
+	film_name nvarchar(50) not null comment'电影名称',
+	film_images nvarchar(50) comment'电影海报图',
+	film_type nvarchar(50) comment'电影类型',
+	film_feature nvarchar(50) comment'电影特色',
+	film_position nvarchar(50) comment'地区',
+	film_lasttime nvarchar(50) comment'电影时长',
+	film_showtime datetime  comment'上映时间',
+	film_endtime datetime  comment'下架时间',
+	film_score nvarchar(50)  comment'电影评分/想看数',
+	film_introduce nvarchar(5000) comment'电影简介',
+	film_pictures nvarchar(50) comment'电影剧照',
+	is_deleted int default 0 comment'是否删除 0不删除 1删除',
+	created_user nvarchar(50)  comment'创建人名称',
+	created_time datetime  comment'创建时间',
+	modified_user nvarchar(50) comment'修改人',
+	modified_time datetime comment'修改时间',
+	primary key(fid)
+)default charset=utf8;
+
+create table w_person(
+	pid int auto_increment comment'人员id',
+	fid int not null comment'电影id',
+	person_name nvarchar(50) not null comment'人员名称',
+	person_type int not null comment'人员类型 0-导演，1-演员，2-编剧，3制片人',
+	person_image nvarchar(50) comment'人员照片',
+	is_deleted int default 0 comment'是否删除 0不删除 1删除',
+	created_user nvarchar(50) comment'创建人名称',
+	created_time datetime comment'创建时间',
+	modified_user nvarchar(50) comment'修改人',
+	modified_time datetime comment'修改时间',
+	primary key(pid)
+)default charset=utf8;
+
+create table w_hall(
+	hid int auto_increment comment '放映id',
+	fid int not null comment '电影id',
+	seat_table nvarchar(500) not null comment '座位表',
+	hall_name nvarchar(50) not null comment '放映厅名称',
+	start_time datetime comment '开始时间',
+	film_price decimal(18,2) comment '价格',
+	is_deleted int default 0 comment '是否删除 0不删除 1删除',
+	created_user nvarchar(50)  comment '创建人名称',
+	created_time datetime  comment '创建时间',
+	modified_user nvarchar(50) comment '修改人',
+	modified_time datetime comment '修改时间',
+	primary key(hid)
+)default charset=utf8;
+
+
+create table w_order(
+	oid int auto_increment comment'订单id',
+	fid int not null comment'电影id',
+	hid int not null comment'放映id',
+	uid int not null comment'用户id',
+	seats nvarchar(50) not null comment'座位号',
+	total_price decimal(18,2) not null comment'总价',
+	is_deleted int default 0 comment'是否删除 0不删除 1删除',
+	created_user nvarchar(50) not null comment'创建人名称',
+	created_time datetime not null comment'创建时间',
+	modified_user nvarchar(50) comment'修改人',
+	modified_time datetime comment'修改时间',
+	primary key(oid)
+)default charset=utf8;
+
+	
+
+

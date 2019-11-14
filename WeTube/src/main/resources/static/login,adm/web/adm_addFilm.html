@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="utf-8" />
+		<title>WeTube电影</title>
+		<!--导入核心文件-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/user_manager.css"/>
+		
+		<!--复选款样式-->
+		<link rel="stylesheet" href="../css/jquery-labelauty.css">
+		<style>
+		ul { list-style-type: none;}
+		li { display: inline-block;}
+		li { margin: 10px 0;}
+		input.labelauty + label { font: 12px "Microsoft Yahei";}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="header">
+			<!--WeTube logo-->
+			<div class="col-md-3">
+				<a href="../../index/web/index.html">
+					<img src="../../movie/header_footer/images/index/logo.png" width="300px" alt="" />
+				</a>
+			</div>
+
+		</header>
+		<!--头部结束-->
+		<div class="col-md-10" style="margin: 0 0 0 150px; width: 1500px;">
+			<div class="panel panel-default">
+				<ul class="nav nav-tabs">
+					<li><a href="adm_password.html">修改密码</a></li>
+					<li><a href="adm_user_manager.html">用户管理</a></li>
+					<li class="active"><a href="#">电影管理</a></li>
+
+				</ul>
+				
+				<div class="panel-body" style=" width: 1700px;">
+					<!--新增收货地址表单开始-->
+					<form id="form-addnew" class="form-horizontal" role="form" style="width: 1700px;">
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>电影名</label>
+							<div class="col-md-8">
+								<input name="filmName" type="text" class="form-control" placeholder="请输入电影名">
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>封面图</label>
+							<div class="col-md-8">
+								<div>
+									<!--上传封面图表单开始-->
+									<input type="file" id="filmImages">
+									<input type="hidden" id="HfilmImages" name="filmImages" />
+								</div>
+							</div>
+						</div>
+						
+						<!--类型-->
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>类型</label>
+							<div class="col-md-8">
+								<ul class="dowebok" >
+									<li><input type="checkbox" id="c_type1" data-labelauty="剧情" value="剧情"></li>
+									<li><input type="checkbox" id="c_type2" data-labelauty="喜剧" value="喜剧"></li>
+									<li><input type="checkbox" id="c_type3" data-labelauty="动作" value="动作"></li>
+									<li><input type="checkbox" id="c_type4" data-labelauty="爱情" value="爱情"></li>
+									<li><input type="checkbox" id="c_type5" data-labelauty="科幻" value="科幻"></li>
+									<li><input type="checkbox" id="c_type6" data-labelauty="动画" value="动画"></li>
+									<li><input type="checkbox" id="c_type7" data-labelauty="悬疑" value="悬疑"></li>
+									<li><input type="checkbox" id="c_type8" data-labelauty="惊悚" value="惊悚"></li>
+									<li><input type="checkbox" id="c_type9" data-labelauty="恐怖" value="恐怖"></li>
+									<li><input type="checkbox" id="c_type10" data-labelauty="犯罪" value="犯罪"></li>
+									<li><input type="checkbox" id="c_type11" data-labelauty="同性" value="同性"></li>
+									<li><input type="checkbox" id="c_type12" data-labelauty="音乐" value="音乐"></li>
+									<li><input type="checkbox" id="c_type13" data-labelauty="歌舞" value="歌舞"></li>
+									<li><input type="checkbox" id="c_type14" data-labelauty="传记" value="传记"></li>
+									<li><input type="checkbox" id="c_type15" data-labelauty="历史" value="历史"></li>
+									<li><input type="checkbox" id="c_type16" data-labelauty="战争" value="战争"></li>
+									<li><input type="checkbox" id="c_type17" data-labelauty="西部" value="西部"></li>
+									<li><input type="checkbox" id="c_type18" data-labelauty="奇幻" value="奇幻"></li>
+									<li><input type="checkbox" id="c_type19" data-labelauty="冒险" value="冒险"></li>
+									<li><input type="checkbox" id="c_type20" data-labelauty="灾难" value="灾难"></li>
+									<li><input type="checkbox" id="c_type21" data-labelauty="武侠" value="武侠"></li>
+									<li><input type="checkbox" id="c_type22" data-labelauty="情色" value="情色"></li>
+								</ul>
+								<input type="hidden" id="film_type_str" name="filmType" />
+							</div>
+						</div>
+						
+						<!--特色  这里可能与上面的有冲突-->
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>特色</label>
+							<div class="col-md-8">
+								<ul class="dowebok" id="c_feature">
+									<li><input type="checkbox" id="c_feature1" data-labelauty="经典" value="经典"></li>
+									<li><input type="checkbox" id="c_feature2" data-labelauty="青春" value="青春"></li>
+									<li><input type="checkbox" id="c_feature3" data-labelauty="文艺" value="文艺"></li>
+									<li><input type="checkbox" id="c_feature4" data-labelauty="搞笑" value="搞笑"></li>
+									<li><input type="checkbox" id="c_feature5" data-labelauty="励志" value="励志"></li>
+									<li><input type="checkbox" id="c_feature6" data-labelauty="魔幻" value="魔幻"></li>
+									<li><input type="checkbox" id="c_feature7" data-labelauty="感人" value="感人"></li>
+									<li><input type="checkbox" id="c_feature8" data-labelauty="女性" value="女性"></li>
+									<li><input type="checkbox" id="c_feature9" data-labelauty="黑帮" value="黑帮"></li>
+								</ul>
+								<input type="hidden" id="film_feature_str" name="filmFeature" />
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>地区</label>
+							<div class="col-md-8">
+								<div class="form-group ">
+									<div class="col-md-3">
+										<select id="c_area" name="filmPosition" class="form-control" >
+											<option value="0" style="color: #b6b6b6" disabled selected>请选择地区</option>
+											<option value="中国大陆">中国大陆</option> 
+											<option value="美国">美国</option>
+											<option value="香港">香港</option>
+											<option value="台湾">台湾</option>
+											<option value="日本">日本</option> 
+											<option value="韩国">韩国</option>
+											<option value="英国">英国</option>
+											<option value="法国">法国</option>
+											<option value="德国">德国</option> 
+											<option value="意大利">意大利</option>
+											<option value="西班牙">西班牙</option>
+											<option value="印度">印度</option>
+											<option value="泰国">泰国</option>
+											<option value="俄罗斯">俄罗斯</option>
+											<option value="伊朗">伊朗</option> 
+											<option value="加拿大">加拿大</option>
+											<option value="澳大利亚">澳大利亚</option>
+											<option value="爱尔兰">爱尔兰</option>
+											<option value="瑞典">瑞典</option>
+											<option value="巴西">巴西</option>
+											<option value="丹麦">丹麦</option>  
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>时长</label>
+							<div class="col-md-8">
+								<input name="filmLasttime" type="text" class="form-control" placeholder="请输入时长，如： 70分钟">
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>上映时间</label>
+							<div class="col-md-8">
+								<input name="filmShowtime" type="date" class="form-control">
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>下架时间</label>
+							<div class="col-md-8">
+								<input name="filmEndtime" type="date" class="form-control">
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>评分/想看数</label>
+							<div class="col-md-8">
+								<input name="filmScore" type="text" class="form-control" placeholder="请输入评分/想看数">
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label"><span style="color: red;">*</span>剧情介绍</label>
+							<div class="col-md-8">
+								<textarea name="filmIntroduce" class="form-control" cols="3"  placeholder="请输入剧情介绍"></textarea>
+							</div>
+						</div>
+						
+						<div class="form-group" >
+							<label class="col-md-2 control-label">影片剧照</label>
+							<div class="col-md-8">
+								<div>
+										<input type="file" id="filmPictures" style="margin: 4px 0 0 30px;">
+										<input type="hidden" id="HfilmPictures" name="filmPictures" />
+									</div>
+							</div>
+						</div>
+						
+					</form>
+						<div class="form-group" style="margin: 30px 0 0 0">
+
+							<label class="col-md-2 control-label" style="margin: 0 0 0 500px; float: left;">
+								<a href="address.html">返回</a>&nbsp;&nbsp;&nbsp;
+							</label>
+
+							<div class="col-sm-10" style="margin: -25px 0 0 800px; float: left;">
+								<input id="btn-addnew" type="button" class="col-md-1 btn btn-primary" value="保存" />
+
+								<input type="reset" class="col-md-offset-1 col-md-1 btn btn-primary" value="重置" />
+							</div>
+						</div>
+					</div>
+			
+			</div>
+
+		</div>
+		<!--页脚开始-->
+		<div class="clearfix"></div>
+		<footer class="footer">
+			<!-- 页面底部-备案号 #footer -->
+			<div class="col-md-12 text-center bottom">
+				Copyright © 2018 WeTube.cn All Rights Reserved 京ICP备08000853号-56 <a target="_blank" style="font-size: 12px" href="http://www.tedu.cn/">WeTube科技集团有限公司</a> 版权所有
+			</div>
+
+		</footer>
+		<!--页脚结束-->
+	<script type="text/javascript">
+		
+	$("#btn-addnew").click(function(){
+		var film_type_str = document.getElementById("film_type_str");
+		var film_feature_str = document.getElementById("film_feature_str");
+		
+		//拼接类型标签
+		for(var i=1; i<=22; i++)
+		{
+			var str = document.getElementById("c_type"+i);
+			if(str.checked == true)
+			{
+				if(film_type_str.value == "") film_type_str.value = str.value;
+				else film_type_str.value = film_type_str.value + "," + str.value;
+			}
+		}
+			
+		//拼接特色标签
+		for(var i=1; i<=9; i++)
+		{
+			var str = document.getElementById("c_feature"+i);
+			if(str.checked == true)
+			{
+				if(film_feature_str.value == "") film_feature_str.value = str.value;
+				else film_feature_str.value = film_feature_str.value + "," + str.value;
+			}
+		}
+		//分隔路径
+		var filmImages = document.getElementById("filmImages");
+		var filmPictures = document.getElementById("filmPictures");
+		var HfilmImages = document.getElementById("HfilmImages");
+		var HfilmPictures = document.getElementById("HfilmPictures");
+		var newFImages = filmImages.value.split("\\");
+		HfilmImages.value = newFImages[newFImages.length-1];
+		var newFPictures = filmPictures.value.split("\\");
+		HfilmPictures.value = newFPictures[newFPictures.length-1];
+		$.ajax({
+			"url":"/films/addnew",
+			"data":$("#form-addnew").serialize(),
+			"type":"POST",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					alert("增加成功！");
+				} else {
+					alert(json.message);
+				}
+			},
+			"error":function() {
+				alert("您的登录信息已经过期，请重新登录！");
+			}
+		});
+	});
+	</script>
+	
+	<script src="../js/jquery-1.8.3.min.js"></script>
+	<script src="../js/jquery-labelauty.js"></script>
+	<script>
+	$(function(){
+		$(':input').labelauty();
+	});
+	</script>
+	</body>
+
+</html>

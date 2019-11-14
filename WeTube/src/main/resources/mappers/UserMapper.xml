@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.Rise435.WeTube.mapper.UserMapper">
+	
+	<!-- 插入用户数据 -->
+	<!-- Integer insert(User user) -->
+	<insert id="insert">
+		INSERT INTO w_user (
+			username, password,
+			gender, phone,
+			user_avatar, is_deleted,
+			created_user, created_time,
+			modified_user, modified_time
+		) VALUES (
+			#{username}, #{password},
+			#{gender}, #{phone},
+			#{userAvatar}, #{isDelete},	
+			#{createdUser}, #{createdTime},
+			#{modifiedUser}, #{modifiedTime}
+		)
+	</insert>
+	
+	<!-- 更新用户密码 -->
+	<!-- Integer updatePassword(
+		    @Param("uid") Integer uid, 
+		    @Param("password") String password, 
+		    @Param("modifiedUser") String modifiedUser, 
+		    @Param("modifiedTime") Date modifiedTime) -->
+	<update id="updatePassword">
+		UPDATE 
+			t_user 
+		SET 
+			password=#{password}, 
+			modified_user=#{modifiedUser}, 
+			modified_time=#{modifiedTime} 
+		WHERE 
+			uid=#{uid}
+	</update>
+	
+	<!-- 更新个人资料 -->
+	<!-- Integer updateInfo(User user) -->
+	<update id="updateInfo">
+		UPDATE 
+			t_user 
+		SET 
+			phone=#{phone},email=#{email},
+			gender=#{gender},
+			modified_user=#{modifiedUser},
+			modified_time=#{modifiedTime}
+		WHERE 
+			uid=#{uid}
+	</update>
+	
+	<!-- 更新用户头像 -->
+	<!-- Integer updateAvatar(
+		    @Param("uid") Integer uid, 
+		    @Param("avatar") String avatar, 
+		    @Param("modifiedUser") String modifiedUser, 
+		    @Param("modifiedTime") Date modifiedTime) -->
+	<update id="updateAvatar">
+		UPDATE 
+			t_user 
+		SET 
+			avatar=#{avatar}, 
+			modified_user=#{modifiedUser}, 
+			modified_time=#{modifiedTime} 
+		WHERE 
+			uid=#{uid}
+	</update>
+	
+	<!-- 根据用户名查询用户数据 -->
+	<!-- User findByUsername(String username) -->
+	<select id="findByUsername"
+		resultType="com.Rise435.WeTube.entity.User">
+		SELECT 
+			uid, password, 
+			is_deleted AS isDelete,
+			user_avatar AS userAvatar
+		FROM 
+			w_user 
+		WHERE 
+			username=#{username}
+	</select>
+	
+	<!-- 根据用户id查询用户数据 -->
+	<!-- User findByUid(Integer uid) -->
+	<select id="findByUid"
+		resultType="com.Rise435.WeTube.entity.User">
+		SELECT 
+			username AS username, phone,
+			gender, password,
+			user_avatar AS userAvatar,
+			is_deleted AS isDelete
+		FROM 
+			w_user 
+		WHERE 
+			uid=#{uid}
+	</select>
+	
+</mapper>
+
+
+
+
+
+

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="css/css.css" rel="stylesheet" type="text/css" />
+
+
+		<!--导入核心文件-->
+		<script src="header_footer/bootstrap3/js/holder.js"></script>
+		<link href="header_footer/bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<script src="../index/header_footer/bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../static1/header_footer/bootstrap3/js/bootstrap.js"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="header_footer/bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="header_footer/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="header_footer/css/top.css" />
+		<link rel="stylesheet" type="text/css" href="header_footer/css/footer.css" />
+
+		<script src="js/jquery1.min.js"></script>
+		<script src="js/slider.js" type="text/javascript"></script> 
+		<script type="text/javascript">
+
+		
+		$(document).ready(function() {
+		$('#slider').slider({ speed: 500 });
+		});            
+		</script>
+		<style>
+		.banner
+		{
+			margin-top: 0px;
+			width 100%;
+		   	min-width: 1800px;
+		    height: 376px;
+		    position: relative;		    
+		    background-image: url(img/background.png);
+		    float: left;
+		}
+		.div-moive-image
+		{
+			margin-left:400px ;
+			margin-top: 80px;
+			width: 240px;
+			height: 330px;
+			border: 3px solid #FFFFF0;
+			float: left;
+		}
+		.div-movie-name
+		{
+			
+			position: relative;
+			margin-left: 50px;
+			margin-top: 80px;
+			width: 1000px;
+			height: 110px;
+			/*border: 3px solid;*/
+			float: left;
+		}
+		.div-movie-button
+		{
+			position: relative;
+			margin-left: 60px;
+			margin-top: 50px;
+			width: 500px;
+			height: 86px;
+			/*border: 3px solid;*/
+			float: left;
+		}
+		.h1-movie-name
+		{
+			
+			margin-top: 0px;
+			/*margin-left: 40px;*/
+			font-family: "黑体";
+			color: white;
+			font-size: 30px;
+			
+		}
+		.li-movie-name
+		{
+			text-overflow:ellipsis;
+			overflow: hidden;
+			color: white;
+		}	
+		#container
+		{
+			margin-top: 100px;
+			width: 100%;
+			height: 1000px;
+			/*border: 3px solid;*/
+			float: left;
+			background-color: white;
+		}	
+		#div_table
+		{
+			margin-top: 50px;
+			margin-left: 300px;
+			float: left;
+			width: 1300px;
+			height: 500px;
+			/*border: 3px solid;*/
+		}
+		#movie_info
+		{
+			margin-left: 100px;
+			/*border: 3px solid;*/
+			height: 100px;
+			width: 98%;
+		}
+		#movie_name
+		{
+			font-size: 25px;
+			
+		}
+		.movie_information
+		{
+			font-size: 15px;
+			color: #333333;
+		}
+		table.altrowstable 
+		{
+			font-family: verdana,arial,sans-serif;
+			font-size:11px;
+			color:#333333;
+			/*border-width: 1px;*/
+			/*border-color: #a9c6c9;
+			border-collapse: collapse;*/
+		}
+		table.altrowstable th {
+			height: 30px;
+			background-color: #F0F8FF;
+			font-size: 16px;
+			width: 240px;
+			/*border-width: 1px;*/
+			padding: 8px;
+			text-align: center;  
+			/*border-style: solid;
+			border-color: #a9c6c9;*/
+		}
+		table.altrowstable td {
+			height: 60px;
+			text-align: center;
+			font-size: 16px;
+			border-bottom: 1px gainsboro solid;
+			width: 240px;
+			/*border-width: 1px;*/
+			padding: 8px;
+			/*border-style: solid;
+			border-color: #a9c6c9;*/
+		}
+		.oddrowcolor{
+			background-color:#d4e3e5;
+		}
+		.evenrowcolor{
+			background-color:#c3dde0;
+		}
+		.button
+		{
+			color: white;
+			width: 100px; 
+			height: 30px; 
+			font-size: 16px;
+			background-color: red; 
+			border-radius: 20px;
+			border: hidden;
+
+		}
+		.timeT
+		{
+			font-size: 18px;
+			font-weight: 900;
+			font-family: "黑体";
+		}
+		.priceT
+		{
+			font-size: 18px;
+			font-weight: 900;
+			font-family: "黑体";
+			color: red;
+		}
+		
+		.my_header
+			{
+				text-align: center;
+				align-items: center;
+			}
+			.my_div1 div
+			{
+				border-bottom:0.5px solid #000;
+			}
+			.my_div2 div
+			{
+				border-bottom:none;
+			}
+			.my_images
+			{
+				position: absolute;
+				left: 6.25rem;
+				top: 0.5rem;
+			}
+			.my_images0 img
+			{
+				size: 50%;
+				margin-top: 1.25rem;
+			}
+			.myfont
+			{
+				font-size: 30%;
+			}
+			.my_font
+			{
+				font-size: 100%;
+				text-align: center;
+			}
+			.normal_font
+			{
+				font-size: 5%;
+			}
+			h1
+			{
+				font-size: 150%;
+			}
+			#multi_images li
+			{
+				float:left;
+				display: inline;
+				width: 12.5rem;
+			}
+			#divcss div
+			{
+				align-items: center;
+				align-content: center;
+				width: 15.625rem;
+				vertical-align: auto;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<!--头部-->
+		<header class="my_header head" style="height: 6.25rem;">
+			<!--学子商城logo-->
+			<div class="col-md-3 my_images">
+				<a href="../index/web/index.html">
+					<img src="header_footer/images/index/logo.png" height="80" width="160" class="my_images" />
+				</a>
+			</div>
+			<!--快捷选项-->
+			
+			<div class="col-md-9 top-item" >
+				
+				<ul class="list-inline" style="float: right; font-size:150%;" >
+
+					<li><a href="favorites.html"><span class="fa fa-heart"></span>&nbsp;收藏</a></li>
+					<li class="li-split">|</li>
+					<li><a href="orders.html"><span class="fa fa-file-text"></span>&nbsp;订单</a></li>
+					<li class="li-split">|</li>
+					<li><a href="cart.html"><span class="fa fa-cart-plus"></span>&nbsp;想看</a></li>
+					<li class="li-split">|</li>
+					<li>
+						<!--下列列表按钮 ：管理-->
+						<div class="btn-group">
+							<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"  style="font-size: 110%;">
+								<span id="top-dropdown-btn"><span class="fa fa-gears"></span>&nbsp;管理 <span class="caret"></span></span>
+							</button>
+							<ul class="dropdown-menu top-dropdown-ul" role="menu">
+								<li><a href="password.html">修改密码</a></li>
+								<li><a href="userdata.html">个人资料</a></li>
+								<li><a href="upload.html">上传头像</a></li>
+								<li><a href="address.html">收货管理	</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li-split">|</li>
+					<li><a href="../login,adm/web/login.html"><span class="fa fa-user"></span>&nbsp;登录</a></li>
+
+				</ul>	
+			</div>
+		</header>
+		<!--头部结束-->
+		<div id="div_banner" class="banner" style="margin-top: 1%;">
+			<div id="div_movie_image" class="div-moive-image">
+				<input type="image" width="100%" height="100%" src="img/1.jpg" />
+			</div>
+			<div id="div_movie_name" class="div-movie-name">
+				<h1 id="h1_movie_name" class="h1-movie-name">烽禾影城（祈福新邨店）</h1>
+				<ul>
+					<li id="li_movie_category" class="li-movie-name">番禺区钟屏路钟福广场3层（祈福新村祈福医院旁）</li>
+					<li id="li_movie_place" class="li-movie-name">电话：020-39108189/39108150</li>
+					
+				</ul>
+			</div>
+			<div id="div_movie_button" class="div-movie-button">
+				<span style="font-size: 20px; color: white;">影院服务</span><p></p>
+				<span style="font-size: 10px; color: white;">3D眼镜免费</span><p></p>
+				<span style="font-size: 10px; color: white;">免费停车</span><p></p>
+			</div>			
+		</div>
+		<div id="container">
+			<div style="background-color: whitesmoke;margin-left: 400px; 
+				width: 1200px; height: 350px;">
+				<div id="slider">
+					<div class="spic">
+						<img src="img/1.jpg" />
+						
+					</div>
+					<div class="spic">
+						<img src="img/2.jpg" />
+						
+					</div>
+					<div class="spic">
+						<img src="img/3.jpg" />
+						
+					</div>
+					 <div class="spic">
+						<img src="img/4.jpg" />
+						
+					</div>
+					<div class="spic">
+						<img src="img/5.jpg" />
+						
+					</div>
+					<div class="spic">
+						<img src="img/6.jpg" />
+						
+					</div>    
+				</div>
+			</div>
+				<div id="div_table">
+					<div id="movie_info">
+						<span id="movie_name">哪吒之魔童降临</span><p></p>
+						<span id="movie_type" class="movie_information">类型：喜剧</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span id="movie_time" class="movie_information">时长：98分钟</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span id="movie_actor" class="movie_information">主演：张家辉，古天乐</span>
+					</div>
+					<table id="time_information" class="altrowstable">
+						<tr>
+							<th>放映时间</th>
+							<th>语言版本</th>
+							<th>放映厅</th>
+							<th>售价（元）</th>
+							<th>选座购票</th>
+						</tr>
+						<tr>
+							<td><span class="timeT"> 08:00 </span></td>
+							<td>国语2D</td>
+							<td>3号厅</td>
+							<td><span class="priceT">50.2元</span></td>
+							<td><input type="button" value="选座购票" class="button" onclick="choose_seat()"/></td>
+						</tr>
+						<tr>
+							<td><span class="timeT"> 08:00 </span></td>
+							<td>国语2D</td>
+							<td>3号厅</td>
+							<td><span class="priceT">50.2元</span></td>
+							<td><input type="button" value="选座购票" class="button" onclick="choose_seat()"/></td>
+						</tr>
+						<tr>
+							<td><span class="timeT"> 08:00 </span></td>
+							<td>国语2D</td>
+							<td>3号厅</td>
+							<td><span class="priceT">50.2元</span></td>
+							<td><input type="button" value="选座购票" class="button" onclick="choose_seat()"/></td>
+						</tr>
+						<tr>
+							<td><span class="timeT"> 08:00 </span></td>
+							<td>国语2D</td>
+							<td>3号厅</td>
+							<td><span class="priceT">50.2元</span></td>
+							<td><input type="button" value="选座购票" class="button" onclick="choose_seat()"/></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+				<!--页脚开始-->
+		<div class="clearfix"></div>
+		<footer class="footer" style="background:lightgray">
+			<!--联系我们、下载客户端等-->
+			<div class="container beforeBottom">
+				<div class="col-md-offset-1 col-md-3">
+					<div><img src="header_footer/images/index/logo.png" height="50" width="140" alt="" class="footLogo" /></div>
+					<div><img src="header_footer/images/index/footerFont.png" alt="" /></div>
+
+				</div>
+				<div class="col-md-4 callus text-center">
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#客服帮助"><h5>客服帮助</h5></a></li>
+							<li><a href="#新手指南">新手指南</a></li>
+							<li><a href="#服务保障">服务保障</a></li>
+							<li><a href="#常见问题">常见问题</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#前台帮助"><h5>前台帮助</h5></a></li>
+							<li><a href="#合伙投资">合伙投资</a></li>
+							<li><a href="#后台管理">后台管理</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul>
+							<li><a href="#关于我们"><h5>关于我们</h5></a></li>
+							<li><a href="#关于WeTube">关于WeTube</a></li>
+							<li><a href="#联系我们">联系我们</a></li>
+							<li>
+								<span class="fa fa-wechat"></span>
+								<span class="fa fa-weibo"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="col-md-5">
+						<p>WeTube客户端</p>
+						<img src="header_footer/images/index/ios.png" class="lf">
+						<img src="header_footer/images/index/android.png" alt="" class="lf" />
+					</div>
+					<div class="col-md-6">
+						<img src="header_footer/images/index/erweima.png">
+					</div>
+				</div>
+			</div>
+			<!-- 页面底部-备案号 #footer -->
+			<div class="col-md-12 text-center bottom">
+				Copyright © 2018 WeTube.com All Rights Reserved 京ICP备xxxxxxxx号-xx <a target="_blank" style="font-size: 12px" href="http://www.WeTube.com/">WeTube集团有限公司</a> 版权所有
+			</div>
+
+		</footer>
+		<!--页脚结束-->
+			
+	</body>
+</html>
+
+<script type="text/javascript">
+	function choose_seat(){
+		window.location.href='choose_seat.html';
+	}
+	function return_index(){
+		window.location.href='../index/web/index.html';
+	}
+	
+</script>

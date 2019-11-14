@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+		<title>WeTube电影</title>
+		<!--导入核心文件-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<script src="../js/user_manager.js"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/user_manager.css"/>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="header">
+			<!--WeTube logo-->
+			<div class="col-md-3">
+				<a href="../../index/web/index.html">
+					<img src="../images/index/logo.png" width="300px" alt="" />
+				</a>
+			</div>
+
+		</header>
+		<!--头部结束-->
+		<div class="col-md-10" style="align-content: center; margin: 0 0 0 100px; width: 1800px;">
+			<div class="panel panel-default">
+				<ul class="nav nav-tabs">
+					<li><a href="adm_password.html">修改密码</a></li>
+					<li><a href="adm_user_manager.html">用户管理</a></li>
+					<li class="active"><a href="#">电影管理</a></li>
+
+				</ul>
+				<div class="panel-body" style="width: 1750px; align-content: center; margin: 0 0 0 20;">
+					<!--地址显示-->
+					<table class="table table-striped">
+						<caption>电影信息列表</caption>
+						<form id="form1" name="form1" method="post" action="" >
+							<table width="1700px" border="0" cellpadding="0" 
+								cellspacing="0" id="tabProduct" style="line-height: 30px;" align="left">
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox" value="checkbox" /></td>
+									<th Name="fid" EditType="TextBox">ID</th>
+									<th Name="f_name" EditType="TextBox">电影名</th>
+									<th Name="f_cover" EditType="TextBox" width="300px">封面图</th>
+									<th Name="f_type" EditType="TextBox">类型</th>
+									<th Name="f_feature" EditType="TextBox">特色</th>
+									<th Name="f_pos" EditType="DropDownList" 
+										DataItems="
+										{text:'中国大陆',value:'China'},{text:'美国',value:'USA'},
+										{text:'香港',value:'Hongkong'},{text:'台湾',value:'Taiwan'},
+										{text:'日本',value:'Japen'},{text:'法国',value:'France'},
+										{text:'韩国',value:'Korea'},{text:'英国',value:'England'},
+										{text:'德国',value:'Germany'},{text:'意大利',value:'Italy'},
+										{text:'西班牙',value:'Spain'},{text:'印度',value:'India'},
+										{text:'泰国',value:'Thailand'},{text:'俄罗斯',value:'Russia'},
+										{text:'伊朗',value:'Iran'},{text:'澳大利亚',value:'Australia'},
+										{text:'加拿大',value:'Canada'},{text:'爱尔兰',value:'Ireland'},
+										{text:'瑞典',value:'Sweden'},{text:'巴西',value:'Brazil'},
+										{text:'丹麦',value:'Demake'}">地区</th>
+									<th Name="f_last_time" EditType="TextBox">时长</th>	
+									<th Name="f_show_time" EditType="TextBox">上映时间</th>
+									<th Name="f_score" EditType="TextBox">评分/想看数</th>
+									<th Name="f_price" EditType="TextBox">票价</th>	
+									<th Name="f_introduce" EditType="TextBox" width="400px">剧情介绍</th>
+									<th Name="f_actor_name" EditType="TextBox">演员名</th>
+									<th Name="f_actor_pic" EditType="TextBox">演员照片</th>	
+									<th Name="f_actor_type" EditType="TextBox">演员类型</th>
+									<th Name="f_stage_photo" EditType="TextBox">影片剧照</th>
+								</tr>
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox2" value="checkbox" /></td>
+									<td>1</td>
+									<td>电影名</td>
+									<td>封面图</td>
+									<td>类型</td>
+									<td>特色</td>
+									<td>地区 </td>
+									<td>时长</td>
+									<td>上映时间</td>
+									<td>评分/想看数</td>
+									<td>票价</td>
+									<td>剧情介绍</td>
+									<td>演员名</td>
+									<td>演员照片</td>
+									<td>演员类型</td>
+									<td>影片剧照</td>
+								</tr>
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox22" value="checkbox" /></td>
+									<td>2</td>
+									<td>电影名</td>
+									<td>封面图</td>
+									<td>类型</td>
+									<td>特色</td>
+									<td>地区 </td>
+									<td>时长</td>
+									<td>上映时间</td>
+									<td>评分/想看数</td>
+									<td>票价</td>
+									<td>剧情介绍</td>
+									<td>演员名</td>
+									<td>演员照片</td>
+									<td>演员类型</td>
+									<td>影片剧照</td>
+								</tr>
+							</table>
+							<br /><br /><br /><br /><br />
+							<a href="adm_addFilm.html" 
+								class="btn btn-sm btn-primary"><span class="fa fa-plus"></span>&nbsp;新增</a>
+							<a href="javascript:void(0);" onclick="DeleteRow(document.getElementById('tabProduct'),1)" 
+								class="btn btn-sm btn-primary"><span class="fa fa-minus"></span>&nbsp;删除</a>
+							<a href="javascript:void(0);" onclick="window.location.reload()" 
+								class="btn btn-sm btn-primary"><span class="fa fa-circle"></span>&nbsp;重置</a>
+							<a href="javascript:void(0);" onclick="GetTableData(document.getElementById('tabProduct'));return false;" 
+								class="btn btn-sm btn-primary"><span class="fa fa-check	"></span>&nbsp;提交</a>
+						</form>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+		<!--页脚开始-->
+		<div class="clearfix"></div>
+		<footer class="footer">
+			<!-- 页面底部-备案号 #footer -->
+			<div class="col-md-12 text-center bottom">
+				Copyright © 2018 Wetube.cn All Rights Reserved 京ICP备08000853号-56 <a target="_blank" style="font-size: 12px" href="http://www.tedu.cn/">Wetube科技集团有限公司</a> 版权所有
+			</div>
+
+		</footer>
+		<!--页脚结束-->
+	<script type="text/javascript">
+	
+	function deleteByAid(aid) {
+		$.ajax({
+			"url":"/addresses/" + aid + "/delete",
+			"type":"POST",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					showAddressList();
+				} else {
+					alert(json.message);
+				}
+			},
+			"error":function() {
+				alert("您的登录信息已经过期，请重新登录！");
+				location.href = "login.html";
+			}
+		});
+	}
+	</script>
+	<script language="javascript" src="GridEdit.js"></script>
+	<script language="javascript">
+		var tabProduct = document.getElementById("tabProduct"); 
+		// 设置表格可编辑 
+		// 可一次设置多个，例如：EditTables(tb1,tb2,tb2,......) 
+		EditTables(tabProduct);
+	</script>
+	</body>
+
+</html>
+
+
+
+

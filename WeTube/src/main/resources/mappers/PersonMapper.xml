@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.Rise435.WeTube.mappers.PersonMapper">
+    
+	<!-- Person getPersonImgByFid(Integer fid) -->
+	<!-- 通过电影的fid找到对应的人名 -->
+	<select id="showPersonImgByFid"
+	    resultType="com.Rise435.WeTube.entity.Person">
+	    SELECT
+	    	person_image AS personImage
+	    FROM
+	    	w_person
+	    WHERE
+	    	fid=#{fid}
+	</select>
+	
+	
+	
+	<!-- Person getPersonImgByFilmName(String filmName) -->
+	<!-- 通过电影的名字找到对应的人名 -->
+	<select id="showPersonImgByFilmName"
+	    resultType="com.Rise435.WeTube.entity.Person">
+	    SELECT
+	    	person_image AS personImage
+	    FROM
+	    	w_person
+	    WHERE
+	    	film_name=#{filmName}
+	</select>
+	
+	
+	
+	
+	<!-- 根据电影fid查询演员 -->
+	<!-- List<Person> showPersonListByFid(Integer fid) -->
+	<select id="showPersonImgListByFid"
+		resultType="com.Rise435.WeTube.entity.Person">
+		SELECT 
+			person_image AS personImage
+		FROM 
+			w_person 
+		WHERE 
+			fid=#{fid} 
+		ORDER BY 
+			fid ASC
+	</select>
+	
+	    
+	
+</mapper>

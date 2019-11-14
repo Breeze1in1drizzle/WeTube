@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+		<title>WeTube电影</title>
+		<!--导入核心文件-->
+		<script src="../bootstrap3/js/holder.js"></script>
+		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
+		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<script src="../js/user_manager.js"></script>
+		<!-- 字体图标 -->
+		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../css/top.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/user_manager.css"/>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header class="header">
+			<!--WeTube logo-->
+			<div class="col-md-3">
+				<a href="index.html">
+					<img src="../images/index/logo.png" width="300px" alt="" />
+				</a>
+			</div>
+
+		</header>
+		<!--头部结束-->
+		<div class="col-md-10" style="align-content: center; margin: 0 0 0 100px; width: 1800px;">
+			<div class="panel panel-default">
+				<ul class="nav nav-tabs">
+					<li><a href="adm_password.html">修改密码</a></li>
+					<li class="active"><a href="#">用户管理</a></li>
+					<li><a href="adm_film.html">电影管理</a></li>
+				</ul>
+				<div class="panel-body" style="width: 90%; align-content: center; margin: 0 0 0 20;">
+					<!--地址显示-->
+					<table class="table table-striped">
+						<caption>账号信息列表</caption>
+						<form id="form1" name="form1" method="post" action="" >
+							<table width="1600px" border="0" cellpadding="0" 
+								cellspacing="0" id="tabProduct" style="line-height: 30px;" align="center">
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox" value="checkbox" /></td>
+									<th Name="cid" EditType="TextBox">ID</th>
+									<th Name="username" EditType="TextBox">用户名</th>
+									<th Name="sex" EditType="DropDownList" 
+										DataItems="{text:'男',value:'man'},{text:'女',value:'women'}">性别</th>
+									<th Name="phone" EditType="TextBox">电话</th>
+									<th Name="email" EditType="TextBox">邮箱</th>
+									<th Name="avatar" EditType="TextBox" width="500px">头像</th>
+									<th Name="create_people" EditType="TextBox">创建执行人</th>
+									<th Name="create_time" EditType="TextBox">创建时间</th>
+									<th Name="modified_people" EditType="TextBox">修改执行人</th>
+									<th Name="modified_time" EditType="TextBox">修改时间</th>
+								</tr>
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox2" value="checkbox" /></td>
+									<td>1</td>
+									<td>用户名</td>
+									<td>性别</td>
+									<td>电话</td>
+									<td>邮箱</td>
+									<td>点击查看 </td>
+									<td>创建执行人</td>
+									<td>创建时间</td>
+									<td>修改执行人</td>
+									<td>修改时间</td>
+								</tr>
+								<tr>
+									<td width="32" align="center" Name="Num"><input type="checkbox" name="checkbox22" value="checkbox" /></td>
+									<td>2</td>
+									<td>用户名</td>
+									<td>性别</td>
+									<td>电话</td>
+									<td>邮箱</td>
+									<td>点击查看</td>
+									<td>创建执行人</td>
+									<td>创建时间</td>
+									<td>修改执行人</td>
+									<td>修改时间</td>
+								</tr>
+							</table>
+							<br />
+							<a href="javascript:void(0);" onclick="AddRow(document.getElementById('tabProduct'),1)" 
+								class="btn btn-sm btn-primary"><span class="fa fa-plus"></span>&nbsp;新增</a>
+							<a href="javascript:void(0);" onclick="DeleteRow(document.getElementById('tabProduct'),1)" 
+								class="btn btn-sm btn-primary"><span class="fa fa-minus"></span>&nbsp;删除</a>
+							<a href="javascript:void(0);" onclick="window.location.reload()" 
+								class="btn btn-sm btn-primary"><span class="fa fa-circle"></span>&nbsp;重置</a>
+							<a href="javascript:void(0);" onclick="GetTableData(document.getElementById('tabProduct'));return false;" 
+								class="btn btn-sm btn-primary"><span class="fa fa-check	"></span>&nbsp;提交</a>
+						</form>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!--页脚开始-->
+		<div class="clearfix"></div>
+		<footer class="footer">
+			<!-- 页面底部-备案号 #footer -->
+			<div class="col-md-12 text-center bottom">
+				Copyright © 2018 WeTube.cn All Rights Reserved 京ICP备08000853号-56 <a target="_blank" style="font-size: 12px" href="http://www.tedu.cn/">WeTube科技集团有限公司</a> 版权所有
+			</div>
+
+		</footer>
+		<!--页脚结束-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			"url":"/users/info",
+			"type":"GET",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					// 将服务器响应的数据显示到各控件中
+					$("#username").val(json.data.username);
+					$("#phone").val(json.data.phone);
+					$("#email").val(json.data.email);
+					
+					var genderRadio = json.data.gender == 0 
+						? $("#gender-female") : $("#gender-male"); 
+					genderRadio.attr("checked", "checked");
+				} else {
+					alert(json.message);
+					// 退出登录
+				}
+			}
+		});
+	});
+	</script>
+	
+	<script type="text/javascript">
+	$("#btn-change-info").click(function(){
+		$.ajax({
+			"url":"/users/change_info",
+			"data":$("#form-change-info").serialize(),
+			"type":"POST",
+			"dataType":"json",
+			"success":function(json) {
+				if (json.state == 200) {
+					alert("修改成功！");
+				} else {
+					alert(json.message);
+				}
+			},
+			"error":function() {
+				alert("您的登录信息已经过期，请重新登录！");
+				location.href = "login.html";
+			}
+		});
+	});
+	</script>
+	
+	<script language="javascript" src="GridEdit.js"></script>
+	<script language="javascript">
+		var tabProduct = document.getElementById("tabProduct"); 
+		// 设置表格可编辑 
+		// 可一次设置多个，例如：EditTables(tb1,tb2,tb2,......) 
+		EditTables(tabProduct);
+	</script>
+	</body>
+
+</html>
